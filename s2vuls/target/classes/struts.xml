@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- 指定全局国际化资源文件 -->
+    <constant name="struts.custom.i18n.resources" value="mess"/>
+    <!-- 指定国际化编码所使用的字符集 -->
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+
+<!--    s2-032必须开启-->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+<!--    s2-057必须开启-->
+    <constant name="struts.mapper.alwaysSelectFullNamespace" value="true" />
+
+    <!-- Add packages here -->
+    <package name="s2vuls" extends="struts-default">
+        <action name="s2001" class="cn.seaii.s2001.action.LoginAction">
+            <result name="success">/pages/s2001/welcome.jsp</result>
+            <result name="error">/pages/s2001/index.jsp</result>
+        </action>
+
+        <action name="s2003" class="cn.seaii.s2003.action.LoginAction">
+            <result name="success">/pages/s2003/index.jsp</result>
+        </action>
+
+        <action name="s2007" class="cn.seaii.s2007.action.UserAction">
+            <result name="success">/pages/s2007/welcome.jsp</result>
+            <result name="error">/pages/s2007/index.jsp</result>
+            <result name="input">/pages/s2007/index.jsp</result>
+        </action>
+
+<!--        后端代码可直接用s2003的代码，只需更换jar包即可-->
+        <action name="s2009" class="cn.seaii.s2001.action.LoginAction">
+            <result name="success">/pages/s2001/welcome.jsp</result>
+            <result name="error">/pages/s2001/index.jsp</result>
+        </action>
+
+        <action name="s2012" class="cn.seaii.s2012.action.LoginAction">
+            <!--s2-012-->
+            <result name="redirect" type="redirect">/pages/s2012/index.jsp?user=${user}</result>
+
+            <result name="success">/pages/s2012/index.jsp</result>
+            <result name="error">/pages/s2012/index.jsp</result>
+        </action>
+
+        <action name="s2013" class="cn.seaii.s2013.action.LinkAction">
+            <result name="success">/pages/s2013/index.jsp</result>
+        </action>
+
+<!--        s2-015存在两种情况-->
+        <action name="*" class="cn.seaii.s2015.action.PageAction">
+            <result>/{1}.jsp</result>
+        </action>
+
+        <action name="s2015" class="cn.seaii.s2015.action.ParamAction">
+            <result name="error">${message}</result>
+
+            <result name="success" type="httpheader">
+                <param name="error">305</param>
+                <param name="headers.fxxk">${message}</param>
+            </result>
+        </action>
+
+        <action name="s2016" class="cn.seaii.s2016.action.IndexAction">
+            <result name="success">/pages/s2016/index.jsp</result>
+        </action>
+
+        <action name="s2029" class="cn.seaii.s2029.action.IndexAction">
+            <result name="success">/pages/s2029/index.jsp</result>
+        </action>
+
+        <action name="s2032" class="cn.seaii.s2032.action.IndexAction">
+            <result name="success">/pages/s2032/index.jsp</result>
+        </action>
+
+        <!--        后端代码可直接用s2032的代码，只需更换jar包即可-->
+        <action name="s2045" class="cn.seaii.s2032.action.IndexAction">
+            <result name="success">/pages/s2032/index.jsp</result>
+            <result name="error">/pages/s2032/index.jsp</result>
+        </action>
+
+        <action name="s2053" class="cn.seaii.s2053.action.IndexAction">
+            <result type="freemarker" name="SUCCESS">/pages/s2053/index.ftl</result>
+        </action>
+
+        <action name="s2057" class="cn.seaii.s2057.action.IndexAction">
+            <result name="" type="redirectAction">
+                <param name="actionName">test</param>
+            </result>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.struts.xwork:xwork-core:2.3.34">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/struts/xwork/xwork-core/2.3.34/xwork-core-2.3.34.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/struts/xwork/xwork-core/2.3.34/xwork-core-2.3.34-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/struts/xwork/xwork-core/2.3.34/xwork-core-2.3.34-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

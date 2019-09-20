@@ -1,0 +1,19 @@
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+.sidebar-nav {
+	padding: 9px 0;
+}
+.tdLabel .label, .wwlbl  .label {
+	background-color: #ffffff;
+	color: #000000;
+	text-shadow: none;
+}
+.alert li {
+	list-style: none;
+}
+.errorMessage, label.errorLabel {
+	color: red;
+}
+label.errorLabel
